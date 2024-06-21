@@ -1,0 +1,61 @@
+=============== Experiment Setup ===============
+active:
+  acq_fsamples: 7
+  batch_budget: 1
+  coresets_dist: euc
+  heuristic: mutual_info
+  init_size: 10
+  pool_size: 970
+  steps: 500
+anneal:
+  alpha: 0.005
+  anneal_step: 100
+  cost_anneal: true
+  method: exp
+data:
+  fids_cost:
+  - 0.0031
+  - 0.1276
+  fids_list:
+  - 33
+  - 129
+  nall: 1200
+  normalize: true
+  ntest: 200
+  ntrain: 1000
+  path: data/matfiles
+  target_fid: 129
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+ensembles:
+  num_ensembles: 5
+  use_disk: true
+logging:
+  display: false
+model:
+  modes: 16
+  width: 64
+optim:
+  learning_rate: 0.001
+  optimizer: Adam
+  scheduler: CosAnnealingLR
+  weight_decay: 0.0001
+seed: 42
+testing:
+  batch_size: 20
+  samples: 20
+training:
+  batch_ratio: 0.1
+  batch_size: 20
+  dropout: 0.2
+  epochs: 200
+  resample: false
+  use_ratio: false
+
+================================================
+loading data...
+Done!
+Exponential cost scheduler V1 initiated
+
+***** Active Step 1 *****

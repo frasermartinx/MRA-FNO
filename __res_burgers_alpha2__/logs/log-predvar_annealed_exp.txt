@@ -1,0 +1,1158 @@
+=============== Experiment Setup ===============
+active:
+  acq_fsamples: 7
+  batch_budget: 1
+  coresets_dist: euc
+  heuristic: predvar
+  init_size: 10
+  pool_size: 970
+  steps: 500
+anneal:
+  alpha: 0.005
+  anneal_step: 100
+  cost_anneal: true
+  method: exp
+data:
+  fids_cost:
+  - 0.0031
+  - 0.1276
+  fids_list:
+  - 33
+  - 129
+  nall: 1200
+  normalize: true
+  ntest: 200
+  ntrain: 1000
+  path: data/matfiles
+  target_fid: 129
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+ensembles:
+  num_ensembles: 5
+  use_disk: true
+logging:
+  display: false
+model:
+  modes: 16
+  width: 64
+optim:
+  learning_rate: 0.001
+  optimizer: Adam
+  scheduler: CosAnnealingLR
+  weight_decay: 0.0001
+seed: 42
+testing:
+  batch_size: 20
+  samples: 20
+training:
+  batch_ratio: 0.1
+  batch_size: 20
+  dropout: 0.2
+  epochs: 200
+  resample: false
+  use_ratio: false
+
+================================================
+loading data...
+Done!
+Exponential cost scheduler V1 initiated
+
+***** Active Step 1 *****
+    (50.722046 secs) ensemble-learner 1, best_rmse=0.5601212382316589,
+    (47.787779 secs) ensemble-learner 2, best_rmse=0.6091159582138062,
+    (46.919457 secs) ensemble-learner 3, best_rmse=0.5680916905403137,
+    (47.386843 secs) ensemble-learner 4, best_rmse=0.5533449053764343,
+    (49.320026 secs) ensemble-learner 5, best_rmse=0.5886008143424988,
+ - avg best_rmse=0.57585 ...
+Current annealed costs = [0.5 0.5]
+ - predvar_annealed_exp selects [609] to query at fid [1]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=10
+      * fid=129, ntr=11
+    current pool examples: 969
+    current test examples: 200
+***** Active Step 2 *****
+    (47.319371 secs) ensemble-learner 1, best_rmse=0.5068531036376953,
+    (47.759064 secs) ensemble-learner 2, best_rmse=0.5221329927444458,
+    (47.708549 secs) ensemble-learner 3, best_rmse=0.5269742012023926,
+    (46.852190 secs) ensemble-learner 4, best_rmse=0.5361599326133728,
+    (47.569471 secs) ensemble-learner 5, best_rmse=0.5231210589408875,
+ - avg best_rmse=0.52305 ...
+Current annealed costs = [0.47554825 0.52445175]
+ - predvar_annealed_exp selects [631] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=11
+      * fid=129, ntr=11
+    current pool examples: 968
+    current test examples: 200
+***** Active Step 3 *****
+    (47.608187 secs) ensemble-learner 1, best_rmse=0.49660494923591614,
+    (88.797371 secs) ensemble-learner 2, best_rmse=0.4937446415424347,
+    (46.551725 secs) ensemble-learner 3, best_rmse=0.48754677176475525,
+    (46.299286 secs) ensemble-learner 4, best_rmse=0.5118141770362854,
+    (46.260873 secs) ensemble-learner 5, best_rmse=0.49034997820854187,
+ - avg best_rmse=0.49601 ...
+Current annealed costs = [0.45337939 0.54662061]
+ - predvar_annealed_exp selects [906] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=12
+      * fid=129, ntr=11
+    current pool examples: 967
+    current test examples: 200
+***** Active Step 4 *****
+    (46.877510 secs) ensemble-learner 1, best_rmse=0.5119138956069946,
+    (48.088892 secs) ensemble-learner 2, best_rmse=0.4872259795665741,
+    (46.232925 secs) ensemble-learner 3, best_rmse=0.447574257850647,
+    (46.882873 secs) ensemble-learner 4, best_rmse=0.5058441758155823,
+    (47.275490 secs) ensemble-learner 5, best_rmse=0.4674108326435089,
+ - avg best_rmse=0.48399 ...
+Current annealed costs = [0.4331882 0.5668118]
+ - predvar_annealed_exp selects [824] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=13
+      * fid=129, ntr=11
+    current pool examples: 966
+    current test examples: 200
+***** Active Step 5 *****
+    (47.238867 secs) ensemble-learner 1, best_rmse=0.4750753939151764,
+    (47.905970 secs) ensemble-learner 2, best_rmse=0.46933218836784363,
+    (47.242079 secs) ensemble-learner 3, best_rmse=0.47900235652923584,
+    (47.266766 secs) ensemble-learner 4, best_rmse=0.5021902918815613,
+    (48.527021 secs) ensemble-learner 5, best_rmse=0.4878273606300354,
+ - avg best_rmse=0.48269 ...
+Current annealed costs = [0.41472156 0.58527844]
+ - predvar_annealed_exp selects [513] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=14
+      * fid=129, ntr=11
+    current pool examples: 965
+    current test examples: 200
+***** Active Step 6 *****
+    (47.697873 secs) ensemble-learner 1, best_rmse=0.470732718706131,
+    (48.993294 secs) ensemble-learner 2, best_rmse=0.4679311513900757,
+    (48.519006 secs) ensemble-learner 3, best_rmse=0.4294055998325348,
+    (46.901893 secs) ensemble-learner 4, best_rmse=0.4616280794143677,
+    (47.846939 secs) ensemble-learner 5, best_rmse=0.4461791217327118,
+ - avg best_rmse=0.45518 ...
+Current annealed costs = [0.3977678 0.6022322]
+ - predvar_annealed_exp selects [978] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=15
+      * fid=129, ntr=11
+    current pool examples: 964
+    current test examples: 200
+***** Active Step 7 *****
+    (51.419598 secs) ensemble-learner 1, best_rmse=0.4453432559967041,
+    (53.369622 secs) ensemble-learner 2, best_rmse=0.5025933384895325,
+    (53.014584 secs) ensemble-learner 3, best_rmse=0.4209055006504059,
+    (53.748399 secs) ensemble-learner 4, best_rmse=0.436529278755188,
+    (53.291403 secs) ensemble-learner 5, best_rmse=0.44108137488365173,
+ - avg best_rmse=0.44929 ...
+Current annealed costs = [0.38214848 0.61785152]
+ - predvar_annealed_exp selects [808] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=16
+      * fid=129, ntr=11
+    current pool examples: 963
+    current test examples: 200
+***** Active Step 8 *****
+    (51.296877 secs) ensemble-learner 1, best_rmse=0.4722655713558197,
+    (50.891807 secs) ensemble-learner 2, best_rmse=0.4453507959842682,
+    (50.888121 secs) ensemble-learner 3, best_rmse=0.3976103365421295,
+    (52.845988 secs) ensemble-learner 4, best_rmse=0.451659619808197,
+    (52.649819 secs) ensemble-learner 5, best_rmse=0.4664853811264038,
+ - avg best_rmse=0.44667 ...
+Current annealed costs = [0.36771221 0.63228779]
+ - predvar_annealed_exp selects [485] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=17
+      * fid=129, ntr=11
+    current pool examples: 962
+    current test examples: 200
+***** Active Step 9 *****
+    (51.034774 secs) ensemble-learner 1, best_rmse=0.4187212586402893,
+    (50.970851 secs) ensemble-learner 2, best_rmse=0.41686108708381653,
+    (51.020988 secs) ensemble-learner 3, best_rmse=0.3986150920391083,
+    (50.553497 secs) ensemble-learner 4, best_rmse=0.42211323976516724,
+    (51.392207 secs) ensemble-learner 5, best_rmse=0.4377475380897522,
+ - avg best_rmse=0.41881 ...
+Current annealed costs = [0.35432964 0.64567036]
+ - predvar_annealed_exp selects [58] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=18
+      * fid=129, ntr=11
+    current pool examples: 961
+    current test examples: 200
+***** Active Step 10 *****
+    (51.046159 secs) ensemble-learner 1, best_rmse=0.4367615580558777,
+    (51.207344 secs) ensemble-learner 2, best_rmse=0.37540802359580994,
+    (50.706034 secs) ensemble-learner 3, best_rmse=0.39414751529693604,
+    (50.612448 secs) ensemble-learner 4, best_rmse=0.40256696939468384,
+    (50.929516 secs) ensemble-learner 5, best_rmse=0.42217177152633667,
+ - avg best_rmse=0.40621 ...
+Current annealed costs = [0.34188961 0.65811039]
+ - predvar_annealed_exp selects [330] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=19
+      * fid=129, ntr=11
+    current pool examples: 960
+    current test examples: 200
+***** Active Step 11 *****
+    (51.870822 secs) ensemble-learner 1, best_rmse=0.3747113347053528,
+    (53.271773 secs) ensemble-learner 2, best_rmse=0.4201328158378601,
+    (53.021902 secs) ensemble-learner 3, best_rmse=0.3999236524105072,
+    (49.303257 secs) ensemble-learner 4, best_rmse=0.41989007592201233,
+    (47.945962 secs) ensemble-learner 5, best_rmse=0.4007945656776428,
+ - avg best_rmse=0.40309 ...
+Current annealed costs = [0.33029607 0.66970393]
+ - predvar_annealed_exp selects [569] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=20
+      * fid=129, ntr=11
+    current pool examples: 959
+    current test examples: 200
+***** Active Step 12 *****
+    (47.350073 secs) ensemble-learner 1, best_rmse=0.3599892854690552,
+    (46.619227 secs) ensemble-learner 2, best_rmse=0.386879563331604,
+    (48.462944 secs) ensemble-learner 3, best_rmse=0.3592614233493805,
+    (50.245438 secs) ensemble-learner 4, best_rmse=0.4049198627471924,
+    (49.889533 secs) ensemble-learner 5, best_rmse=0.35267674922943115,
+ - avg best_rmse=0.37275 ...
+Current annealed costs = [0.31946561 0.68053439]
+ - predvar_annealed_exp selects [78] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=21
+      * fid=129, ntr=11
+    current pool examples: 958
+    current test examples: 200
+***** Active Step 13 *****
+    (49.865949 secs) ensemble-learner 1, best_rmse=0.37485361099243164,
+    (47.979854 secs) ensemble-learner 2, best_rmse=0.3666434586048126,
+    (47.783981 secs) ensemble-learner 3, best_rmse=0.37171295285224915,
+    (48.895327 secs) ensemble-learner 4, best_rmse=0.37101030349731445,
+    (48.087885 secs) ensemble-learner 5, best_rmse=0.38516688346862793,
+ - avg best_rmse=0.37388 ...
+Current annealed costs = [0.3093254 0.6906746]
+ - predvar_annealed_exp selects [717] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=22
+      * fid=129, ntr=11
+    current pool examples: 957
+    current test examples: 200
+***** Active Step 14 *****
+    (49.092253 secs) ensemble-learner 1, best_rmse=0.3984752893447876,
+    (48.571539 secs) ensemble-learner 2, best_rmse=0.3501914143562317,
+    (49.643034 secs) ensemble-learner 3, best_rmse=0.40477627515792847,
+    (46.917521 secs) ensemble-learner 4, best_rmse=0.3657873272895813,
+    (46.249954 secs) ensemble-learner 5, best_rmse=0.3658788800239563,
+ - avg best_rmse=0.37702 ...
+Current annealed costs = [0.29981162 0.70018838]
+ - predvar_annealed_exp selects [909] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=23
+      * fid=129, ntr=11
+    current pool examples: 956
+    current test examples: 200
+***** Active Step 15 *****
+    (46.256898 secs) ensemble-learner 1, best_rmse=0.3702887296676636,
+    (46.111025 secs) ensemble-learner 2, best_rmse=0.3708512485027313,
+    (46.546746 secs) ensemble-learner 3, best_rmse=0.35221466422080994,
+    (47.326251 secs) ensemble-learner 4, best_rmse=0.34629175066947937,
+    (46.812724 secs) ensemble-learner 5, best_rmse=0.3351605236530304,
+ - avg best_rmse=0.35496 ...
+Current annealed costs = [0.29086805 0.70913195]
+ - predvar_annealed_exp selects [567] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=24
+      * fid=129, ntr=11
+    current pool examples: 955
+    current test examples: 200
+***** Active Step 16 *****
+    (48.438898 secs) ensemble-learner 1, best_rmse=0.3850843906402588,
+    (49.661414 secs) ensemble-learner 2, best_rmse=0.3737204372882843,
+    (50.028465 secs) ensemble-learner 3, best_rmse=0.3485305607318878,
+    (48.149873 secs) ensemble-learner 4, best_rmse=0.3541480600833893,
+    (45.298679 secs) ensemble-learner 5, best_rmse=0.3407380282878876,
+ - avg best_rmse=0.36044 ...
+Current annealed costs = [0.28244504 0.71755496]
+ - predvar_annealed_exp selects [467] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=25
+      * fid=129, ntr=11
+    current pool examples: 954
+    current test examples: 200
+***** Active Step 17 *****
+    (45.234439 secs) ensemble-learner 1, best_rmse=0.35018110275268555,
+    (45.540443 secs) ensemble-learner 2, best_rmse=0.34397366642951965,
+    (45.243470 secs) ensemble-learner 3, best_rmse=0.36434248089790344,
+    (46.023493 secs) ensemble-learner 4, best_rmse=0.34020453691482544,
+    (45.937002 secs) ensemble-learner 5, best_rmse=0.35474205017089844,
+ - avg best_rmse=0.35069 ...
+Current annealed costs = [0.27449851 0.72550149]
+ - predvar_annealed_exp selects [188] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=26
+      * fid=129, ntr=11
+    current pool examples: 953
+    current test examples: 200
+***** Active Step 18 *****
+    (46.396512 secs) ensemble-learner 1, best_rmse=0.326677531003952,
+    (46.298933 secs) ensemble-learner 2, best_rmse=0.32576850056648254,
+    (47.377552 secs) ensemble-learner 3, best_rmse=0.34910887479782104,
+    (50.414299 secs) ensemble-learner 4, best_rmse=0.3523266315460205,
+    (51.167421 secs) ensemble-learner 5, best_rmse=0.3645114600658417,
+ - avg best_rmse=0.34368 ...
+Current annealed costs = [0.26698924 0.73301076]
+ - predvar_annealed_exp selects [348] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=27
+      * fid=129, ntr=11
+    current pool examples: 952
+    current test examples: 200
+***** Active Step 19 *****
+    (50.423936 secs) ensemble-learner 1, best_rmse=0.2856901288032532,
+    (50.392915 secs) ensemble-learner 2, best_rmse=0.3297445476055145,
+    (50.471520 secs) ensemble-learner 3, best_rmse=0.3354046642780304,
+    (50.967424 secs) ensemble-learner 4, best_rmse=0.3223833739757538,
+    (50.680900 secs) ensemble-learner 5, best_rmse=0.3176712989807129,
+ - avg best_rmse=0.31818 ...
+Current annealed costs = [0.25988219 0.74011781]
+ - predvar_annealed_exp selects [88] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=28
+      * fid=129, ntr=11
+    current pool examples: 951
+    current test examples: 200
+***** Active Step 20 *****
+    (50.310365 secs) ensemble-learner 1, best_rmse=0.295696496963501,
+    (50.137863 secs) ensemble-learner 2, best_rmse=0.3060515224933624,
+    (51.094888 secs) ensemble-learner 3, best_rmse=0.31238895654678345,
+    (53.421397 secs) ensemble-learner 4, best_rmse=0.3121267855167389,
+    (50.277857 secs) ensemble-learner 5, best_rmse=0.31995630264282227,
+ - avg best_rmse=0.30924 ...
+Current annealed costs = [0.25314596 0.74685404]
+ - predvar_annealed_exp selects [604] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=29
+      * fid=129, ntr=11
+    current pool examples: 950
+    current test examples: 200
+***** Active Step 21 *****
+    (50.456863 secs) ensemble-learner 1, best_rmse=0.31172338128089905,
+    (50.142867 secs) ensemble-learner 2, best_rmse=0.31448492407798767,
+    (50.490427 secs) ensemble-learner 3, best_rmse=0.3439614772796631,
+    (49.173900 secs) ensemble-learner 4, best_rmse=0.3128734529018402,
+    (50.313269 secs) ensemble-learner 5, best_rmse=0.3427981436252594,
+ - avg best_rmse=0.32517 ...
+Current annealed costs = [0.24675236 0.75324764]
+ - predvar_annealed_exp selects [961] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=30
+      * fid=129, ntr=11
+    current pool examples: 949
+    current test examples: 200
+***** Active Step 22 *****
+    (50.268762 secs) ensemble-learner 1, best_rmse=0.300252765417099,
+    (50.670348 secs) ensemble-learner 2, best_rmse=0.31551215052604675,
+    (49.601898 secs) ensemble-learner 3, best_rmse=0.32867681980133057,
+    (49.937435 secs) ensemble-learner 4, best_rmse=0.29825830459594727,
+    (49.863831 secs) ensemble-learner 5, best_rmse=0.31974104046821594,
+ - avg best_rmse=0.31249 ...
+Current annealed costs = [0.24067596 0.75932404]
+ - predvar_annealed_exp selects [891] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=31
+      * fid=129, ntr=11
+    current pool examples: 948
+    current test examples: 200
+***** Active Step 23 *****
+    (49.796406 secs) ensemble-learner 1, best_rmse=0.3218063414096832,
+    (50.141698 secs) ensemble-learner 2, best_rmse=0.30867594480514526,
+    (50.048891 secs) ensemble-learner 3, best_rmse=0.3238566219806671,
+    (49.928370 secs) ensemble-learner 4, best_rmse=0.31896737217903137,
+    (50.306810 secs) ensemble-learner 5, best_rmse=0.31228840351104736,
+ - avg best_rmse=0.31712 ...
+Current annealed costs = [0.2348938 0.7651062]
+ - predvar_annealed_exp selects [912] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=32
+      * fid=129, ntr=11
+    current pool examples: 947
+    current test examples: 200
+***** Active Step 24 *****
+    (51.595927 secs) ensemble-learner 1, best_rmse=0.3035289943218231,
+    (52.230445 secs) ensemble-learner 2, best_rmse=0.30144646763801575,
+    (50.388868 secs) ensemble-learner 3, best_rmse=0.29251375794410706,
+    (48.773357 secs) ensemble-learner 4, best_rmse=0.31662726402282715,
+    (47.557369 secs) ensemble-learner 5, best_rmse=0.30339357256889343,
+ - avg best_rmse=0.30350 ...
+Current annealed costs = [0.22938508 0.77061492]
+ - predvar_annealed_exp selects [273] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=33
+      * fid=129, ntr=11
+    current pool examples: 946
+    current test examples: 200
+***** Active Step 25 *****
+    (48.979404 secs) ensemble-learner 1, best_rmse=0.2934994399547577,
+    (49.093843 secs) ensemble-learner 2, best_rmse=0.3192128837108612,
+    (48.068914 secs) ensemble-learner 3, best_rmse=0.30388185381889343,
+    (48.580918 secs) ensemble-learner 4, best_rmse=0.3304680287837982,
+    (48.646826 secs) ensemble-learner 5, best_rmse=0.31432977318763733,
+ - avg best_rmse=0.31228 ...
+Current annealed costs = [0.22413092 0.77586908]
+ - predvar_annealed_exp selects [96] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=34
+      * fid=129, ntr=11
+    current pool examples: 945
+    current test examples: 200
+***** Active Step 26 *****
+    (48.469453 secs) ensemble-learner 1, best_rmse=0.30394822359085083,
+    (48.406822 secs) ensemble-learner 2, best_rmse=0.30777087807655334,
+    (49.308844 secs) ensemble-learner 3, best_rmse=0.3202665150165558,
+    (48.289310 secs) ensemble-learner 4, best_rmse=0.31226885318756104,
+    (46.625361 secs) ensemble-learner 5, best_rmse=0.2756505012512207,
+ - avg best_rmse=0.30398 ...
+Current annealed costs = [0.21911412 0.78088588]
+ - predvar_annealed_exp selects [516] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=35
+      * fid=129, ntr=11
+    current pool examples: 944
+    current test examples: 200
+***** Active Step 27 *****
+    (46.261729 secs) ensemble-learner 1, best_rmse=0.28967660665512085,
+    (47.869403 secs) ensemble-learner 2, best_rmse=0.2910808026790619,
+    (47.161371 secs) ensemble-learner 3, best_rmse=0.3023163676261902,
+    (46.742322 secs) ensemble-learner 4, best_rmse=0.3164511024951935,
+    (46.341791 secs) ensemble-learner 5, best_rmse=0.2862623929977417,
+ - avg best_rmse=0.29716 ...
+Current annealed costs = [0.21431903 0.78568097]
+ - predvar_annealed_exp selects [540] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=36
+      * fid=129, ntr=11
+    current pool examples: 943
+    current test examples: 200
+***** Active Step 28 *****
+    (46.520951 secs) ensemble-learner 1, best_rmse=0.30121609568595886,
+    (46.554886 secs) ensemble-learner 2, best_rmse=0.2963345944881439,
+    (46.519932 secs) ensemble-learner 3, best_rmse=0.29023611545562744,
+    (46.285502 secs) ensemble-learner 4, best_rmse=0.29253697395324707,
+>>>>>>>>>>> Reload exp configs >>>>>>>>>>> 
+
+Exponential cost scheduler V1 initiated
+
+<<<<<<<<<<< Resume experiments <<<<<<<<<<< 
+
+***** Active Step 28 *****
+>>>>>>>>>>> Reload exp configs >>>>>>>>>>> 
+
+Exponential cost scheduler V1 initiated
+
+<<<<<<<<<<< Resume experiments <<<<<<<<<<< 
+
+***** Active Step 28 *****
+    (52.403574 secs) ensemble-learner 1, best_rmse=0.29926854372024536,
+    (51.190674 secs) ensemble-learner 2, best_rmse=0.32033413648605347,
+    (51.528353 secs) ensemble-learner 3, best_rmse=0.3028477728366852,
+    (50.656313 secs) ensemble-learner 4, best_rmse=0.2899390459060669,
+    (51.163901 secs) ensemble-learner 5, best_rmse=0.2834727466106415,
+ - avg best_rmse=0.29917 ...
+Current annealed costs = [0.21431903 0.78568097]
+ - predvar_annealed_exp selects [219] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=37
+      * fid=129, ntr=11
+    current pool examples: 942
+    current test examples: 200
+***** Active Step 29 *****
+    (51.105108 secs) ensemble-learner 1, best_rmse=0.2905808687210083,
+    (52.298889 secs) ensemble-learner 2, best_rmse=0.310558021068573,
+    (52.075702 secs) ensemble-learner 3, best_rmse=0.3065808415412903,
+    (51.349557 secs) ensemble-learner 4, best_rmse=0.2932418882846832,
+    (51.216971 secs) ensemble-learner 5, best_rmse=0.2827073335647583,
+ - avg best_rmse=0.29673 ...
+Current annealed costs = [0.20973131 0.79026869]
+ - predvar_annealed_exp selects [432] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=38
+      * fid=129, ntr=11
+    current pool examples: 941
+    current test examples: 200
+***** Active Step 30 *****
+    (53.491517 secs) ensemble-learner 1, best_rmse=0.29726868867874146,
+    (51.396367 secs) ensemble-learner 2, best_rmse=0.2943720519542694,
+    (50.818967 secs) ensemble-learner 3, best_rmse=0.3022942841053009,
+    (51.086403 secs) ensemble-learner 4, best_rmse=0.32053831219673157,
+    (50.944839 secs) ensemble-learner 5, best_rmse=0.293393611907959,
+ - avg best_rmse=0.30157 ...
+Current annealed costs = [0.20533785 0.79466215]
+ - predvar_annealed_exp selects [803] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=39
+      * fid=129, ntr=11
+    current pool examples: 940
+    current test examples: 200
+***** Active Step 31 *****
+    (50.731158 secs) ensemble-learner 1, best_rmse=0.29134634137153625,
+    (50.984623 secs) ensemble-learner 2, best_rmse=0.2876143753528595,
+    (50.906928 secs) ensemble-learner 3, best_rmse=0.2966766059398651,
+    (50.470307 secs) ensemble-learner 4, best_rmse=0.29940521717071533,
+    (51.258563 secs) ensemble-learner 5, best_rmse=0.2804224193096161,
+ - avg best_rmse=0.29109 ...
+Current annealed costs = [0.20112663 0.79887337]
+ - predvar_annealed_exp selects [398] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=40
+      * fid=129, ntr=11
+    current pool examples: 939
+    current test examples: 200
+***** Active Step 32 *****
+    (50.276902 secs) ensemble-learner 1, best_rmse=0.2901831269264221,
+    (48.876880 secs) ensemble-learner 2, best_rmse=0.287678599357605,
+    (49.427873 secs) ensemble-learner 3, best_rmse=0.2932620346546173,
+    (48.749912 secs) ensemble-learner 4, best_rmse=0.3130561411380768,
+    (48.840936 secs) ensemble-learner 5, best_rmse=0.30325186252593994,
+ - avg best_rmse=0.29749 ...
+Current annealed costs = [0.19708658 0.80291342]
+ - predvar_annealed_exp selects [40] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=41
+      * fid=129, ntr=11
+    current pool examples: 938
+    current test examples: 200
+***** Active Step 33 *****
+    (49.143540 secs) ensemble-learner 1, best_rmse=0.269443154335022,
+    (50.193481 secs) ensemble-learner 2, best_rmse=0.28233256936073303,
+    (50.162809 secs) ensemble-learner 3, best_rmse=0.29921284317970276,
+    (50.189433 secs) ensemble-learner 4, best_rmse=0.3119703233242035,
+    (48.572418 secs) ensemble-learner 5, best_rmse=0.28303325176239014,
+ - avg best_rmse=0.28920 ...
+Current annealed costs = [0.19320752 0.80679248]
+ - predvar_annealed_exp selects [663] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=42
+      * fid=129, ntr=11
+    current pool examples: 937
+    current test examples: 200
+***** Active Step 34 *****
+    (49.020670 secs) ensemble-learner 1, best_rmse=0.3113834261894226,
+    (49.808282 secs) ensemble-learner 2, best_rmse=0.29379984736442566,
+    (49.837447 secs) ensemble-learner 3, best_rmse=0.2896435558795929,
+    (51.412853 secs) ensemble-learner 4, best_rmse=0.27976420521736145,
+    (50.305346 secs) ensemble-learner 5, best_rmse=0.2708447575569153,
+ - avg best_rmse=0.28909 ...
+Current annealed costs = [0.18948006 0.81051994]
+ - predvar_annealed_exp selects [136] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=43
+      * fid=129, ntr=11
+    current pool examples: 936
+    current test examples: 200
+***** Active Step 35 *****
+    (49.519829 secs) ensemble-learner 1, best_rmse=0.2851204574108124,
+    (49.355755 secs) ensemble-learner 2, best_rmse=0.3146880865097046,
+    (49.577340 secs) ensemble-learner 3, best_rmse=0.28536927700042725,
+    (47.646727 secs) ensemble-learner 4, best_rmse=0.2753926217556,
+    (49.534822 secs) ensemble-learner 5, best_rmse=0.2921507954597473,
+ - avg best_rmse=0.29054 ...
+Current annealed costs = [0.18589553 0.81410447]
+ - predvar_annealed_exp selects [459] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=44
+      * fid=129, ntr=11
+    current pool examples: 935
+    current test examples: 200
+***** Active Step 36 *****
+    (50.003982 secs) ensemble-learner 1, best_rmse=0.27372321486473083,
+    (49.896280 secs) ensemble-learner 2, best_rmse=0.2796899080276489,
+    (49.301279 secs) ensemble-learner 3, best_rmse=0.2656974792480469,
+    (48.189411 secs) ensemble-learner 4, best_rmse=0.2851352095603943,
+    (49.579094 secs) ensemble-learner 5, best_rmse=0.26701119542121887,
+ - avg best_rmse=0.27425 ...
+Current annealed costs = [0.18244591 0.81755409]
+ - predvar_annealed_exp selects [571] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=45
+      * fid=129, ntr=11
+    current pool examples: 934
+    current test examples: 200
+***** Active Step 37 *****
+    (50.433399 secs) ensemble-learner 1, best_rmse=0.2998039126396179,
+    (49.075444 secs) ensemble-learner 2, best_rmse=0.27745646238327026,
+    (48.974891 secs) ensemble-learner 3, best_rmse=0.30293378233909607,
+    (49.586877 secs) ensemble-learner 4, best_rmse=0.29579102993011475,
+    (48.601372 secs) ensemble-learner 5, best_rmse=0.30737078189849854,
+ - avg best_rmse=0.29667 ...
+Current annealed costs = [0.17912376 0.82087624]
+ - predvar_annealed_exp selects [794] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=46
+      * fid=129, ntr=11
+    current pool examples: 933
+    current test examples: 200
+***** Active Step 38 *****
+    (49.190377 secs) ensemble-learner 1, best_rmse=0.28161394596099854,
+    (48.979893 secs) ensemble-learner 2, best_rmse=0.27279984951019287,
+    (49.241568 secs) ensemble-learner 3, best_rmse=0.2909923791885376,
+    (48.651158 secs) ensemble-learner 4, best_rmse=0.2592143714427948,
+    (48.491449 secs) ensemble-learner 5, best_rmse=0.28316059708595276,
+ - avg best_rmse=0.27756 ...
+Current annealed costs = [0.17592218 0.82407782]
+ - predvar_annealed_exp selects [302] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=47
+      * fid=129, ntr=11
+    current pool examples: 932
+    current test examples: 200
+***** Active Step 39 *****
+    (48.842703 secs) ensemble-learner 1, best_rmse=0.33130255341529846,
+    (48.726435 secs) ensemble-learner 2, best_rmse=0.27194857597351074,
+    (50.227920 secs) ensemble-learner 3, best_rmse=0.29499703645706177,
+    (49.881460 secs) ensemble-learner 4, best_rmse=0.2835579216480255,
+    (49.680988 secs) ensemble-learner 5, best_rmse=0.29247164726257324,
+ - avg best_rmse=0.29486 ...
+Current annealed costs = [0.17283477 0.82716523]
+ - predvar_annealed_exp selects [402] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=48
+      * fid=129, ntr=11
+    current pool examples: 931
+    current test examples: 200
+***** Active Step 40 *****
+    (49.950559 secs) ensemble-learner 1, best_rmse=0.30642738938331604,
+    (49.130785 secs) ensemble-learner 2, best_rmse=0.2773461937904358,
+    (50.258059 secs) ensemble-learner 3, best_rmse=0.2918325662612915,
+    (50.773729 secs) ensemble-learner 4, best_rmse=0.29019132256507874,
+    (50.845954 secs) ensemble-learner 5, best_rmse=0.30971792340278625,
+ - avg best_rmse=0.29510 ...
+Current annealed costs = [0.16985556 0.83014444]
+ - predvar_annealed_exp selects [304] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=49
+      * fid=129, ntr=11
+    current pool examples: 930
+    current test examples: 200
+***** Active Step 41 *****
+    (51.874350 secs) ensemble-learner 1, best_rmse=0.27417808771133423,
+    (51.126966 secs) ensemble-learner 2, best_rmse=0.3184872269630432,
+    (51.341746 secs) ensemble-learner 3, best_rmse=0.2866394817829132,
+    (51.826987 secs) ensemble-learner 4, best_rmse=0.2840844392776489,
+    (51.491897 secs) ensemble-learner 5, best_rmse=0.2633112967014313,
+ - avg best_rmse=0.28534 ...
+Current annealed costs = [0.16697899 0.83302101]
+ - predvar_annealed_exp selects [865] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=50
+      * fid=129, ntr=11
+    current pool examples: 929
+    current test examples: 200
+***** Active Step 42 *****
+    (50.453802 secs) ensemble-learner 1, best_rmse=0.28509506583213806,
+    (50.167514 secs) ensemble-learner 2, best_rmse=0.2815574109554291,
+    (48.940730 secs) ensemble-learner 3, best_rmse=0.2693819999694824,
+    (50.271047 secs) ensemble-learner 4, best_rmse=0.28915929794311523,
+    (50.856744 secs) ensemble-learner 5, best_rmse=0.30301129817962646,
+ - avg best_rmse=0.28564 ...
+Current annealed costs = [0.16419989 0.83580011]
+ - predvar_annealed_exp selects [57] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=51
+      * fid=129, ntr=11
+    current pool examples: 928
+    current test examples: 200
+***** Active Step 43 *****
+    (50.689373 secs) ensemble-learner 1, best_rmse=0.2907525300979614,
+    (49.158879 secs) ensemble-learner 2, best_rmse=0.29333415627479553,
+    (50.723524 secs) ensemble-learner 3, best_rmse=0.2886175513267517,
+    (48.811371 secs) ensemble-learner 4, best_rmse=0.2764603793621063,
+    (48.995939 secs) ensemble-learner 5, best_rmse=0.29195234179496765,
+ - avg best_rmse=0.28822 ...
+Current annealed costs = [0.16151342 0.83848658]
+ - predvar_annealed_exp selects [670] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=52
+      * fid=129, ntr=11
+    current pool examples: 927
+    current test examples: 200
+***** Active Step 44 *****
+    (50.179182 secs) ensemble-learner 1, best_rmse=0.27491870522499084,
+    (49.783093 secs) ensemble-learner 2, best_rmse=0.29193174839019775,
+    (49.907450 secs) ensemble-learner 3, best_rmse=0.2847590744495392,
+    (51.379863 secs) ensemble-learner 4, best_rmse=0.27956464886665344,
+    (49.931874 secs) ensemble-learner 5, best_rmse=0.3122312128543854,
+ - avg best_rmse=0.28868 ...
+Current annealed costs = [0.15891505 0.84108495]
+ - predvar_annealed_exp selects [109] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=53
+      * fid=129, ntr=11
+    current pool examples: 926
+    current test examples: 200
+***** Active Step 45 *****
+    (50.360876 secs) ensemble-learner 1, best_rmse=0.2825605869293213,
+    (51.378385 secs) ensemble-learner 2, best_rmse=0.27908533811569214,
+    (53.680837 secs) ensemble-learner 3, best_rmse=0.2992660403251648,
+    (50.257991 secs) ensemble-learner 4, best_rmse=0.28661027550697327,
+    (51.648284 secs) ensemble-learner 5, best_rmse=0.26419469714164734,
+ - avg best_rmse=0.28234 ...
+Current annealed costs = [0.15640055 0.84359945]
+ - predvar_annealed_exp selects [17] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=54
+      * fid=129, ntr=11
+    current pool examples: 925
+    current test examples: 200
+***** Active Step 46 *****
+    (51.002371 secs) ensemble-learner 1, best_rmse=0.2788161337375641,
+    (50.235568 secs) ensemble-learner 2, best_rmse=0.3261064887046814,
+    (51.221721 secs) ensemble-learner 3, best_rmse=0.29214397072792053,
+    (51.324353 secs) ensemble-learner 4, best_rmse=0.2806021571159363,
+    (51.171821 secs) ensemble-learner 5, best_rmse=0.26644036173820496,
+ - avg best_rmse=0.28882 ...
+Current annealed costs = [0.15396596 0.84603404]
+ - predvar_annealed_exp selects [288] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=55
+      * fid=129, ntr=11
+    current pool examples: 924
+    current test examples: 200
+***** Active Step 47 *****
+    (52.063463 secs) ensemble-learner 1, best_rmse=0.3066997528076172,
+    (53.486772 secs) ensemble-learner 2, best_rmse=0.2907065153121948,
+    (53.105814 secs) ensemble-learner 3, best_rmse=0.2696336507797241,
+    (52.554947 secs) ensemble-learner 4, best_rmse=0.30671679973602295,
+    (52.259392 secs) ensemble-learner 5, best_rmse=0.3002624213695526,
+ - avg best_rmse=0.29480 ...
+Current annealed costs = [0.15160755 0.84839245]
+ - predvar_annealed_exp selects [343] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=56
+      * fid=129, ntr=11
+    current pool examples: 923
+    current test examples: 200
+***** Active Step 48 *****
+    (52.499337 secs) ensemble-learner 1, best_rmse=0.26880887150764465,
+    (51.617793 secs) ensemble-learner 2, best_rmse=0.2657053470611572,
+    (51.058887 secs) ensemble-learner 3, best_rmse=0.27646201848983765,
+    (50.686376 secs) ensemble-learner 4, best_rmse=0.2901573181152344,
+    (50.743024 secs) ensemble-learner 5, best_rmse=0.29216861724853516,
+ - avg best_rmse=0.27866 ...
+Current annealed costs = [0.14932183 0.85067817]
+ - predvar_annealed_exp selects [677] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=57
+      * fid=129, ntr=11
+    current pool examples: 922
+    current test examples: 200
+***** Active Step 49 *****
+    (51.242329 secs) ensemble-learner 1, best_rmse=0.26652589440345764,
+    (51.194797 secs) ensemble-learner 2, best_rmse=0.31065911054611206,
+    (51.618249 secs) ensemble-learner 3, best_rmse=0.2716863751411438,
+    (51.609382 secs) ensemble-learner 4, best_rmse=0.276143342256546,
+    (51.850269 secs) ensemble-learner 5, best_rmse=0.3010066747665405,
+ - avg best_rmse=0.28520 ...
+Current annealed costs = [0.14710553 0.85289447]
+ - predvar_annealed_exp selects [654] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=58
+      * fid=129, ntr=11
+    current pool examples: 921
+    current test examples: 200
+***** Active Step 50 *****
+    (52.115275 secs) ensemble-learner 1, best_rmse=0.2737487256526947,
+    (52.075810 secs) ensemble-learner 2, best_rmse=0.3088003993034363,
+    (52.477498 secs) ensemble-learner 3, best_rmse=0.25590044260025024,
+    (54.078789 secs) ensemble-learner 4, best_rmse=0.28965768218040466,
+    (52.806826 secs) ensemble-learner 5, best_rmse=0.3060606122016907,
+ - avg best_rmse=0.28683 ...
+Current annealed costs = [0.14495554 0.85504446]
+ - predvar_annealed_exp selects [646] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=59
+      * fid=129, ntr=11
+    current pool examples: 920
+    current test examples: 200
+***** Active Step 51 *****
+    (52.290799 secs) ensemble-learner 1, best_rmse=0.28348055481910706,
+    (50.677841 secs) ensemble-learner 2, best_rmse=0.3030027151107788,
+    (51.793366 secs) ensemble-learner 3, best_rmse=0.2805284559726715,
+    (52.924452 secs) ensemble-learner 4, best_rmse=0.2790015637874603,
+    (52.516284 secs) ensemble-learner 5, best_rmse=0.29847854375839233,
+ - avg best_rmse=0.28890 ...
+Current annealed costs = [0.14286897 0.85713103]
+ - predvar_annealed_exp selects [753] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=60
+      * fid=129, ntr=11
+    current pool examples: 919
+    current test examples: 200
+***** Active Step 52 *****
+    (53.686329 secs) ensemble-learner 1, best_rmse=0.2766278088092804,
+    (53.404841 secs) ensemble-learner 2, best_rmse=0.2652885317802429,
+    (53.360246 secs) ensemble-learner 3, best_rmse=0.25523945689201355,
+    (54.451241 secs) ensemble-learner 4, best_rmse=0.2898429036140442,
+    (54.174441 secs) ensemble-learner 5, best_rmse=0.3115995526313782,
+ - avg best_rmse=0.27972 ...
+Current annealed costs = [0.14084307 0.85915693]
+ - predvar_annealed_exp selects [632] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=61
+      * fid=129, ntr=11
+    current pool examples: 918
+    current test examples: 200
+***** Active Step 53 *****
+    (54.646259 secs) ensemble-learner 1, best_rmse=0.2748110890388489,
+    (53.000763 secs) ensemble-learner 2, best_rmse=0.2582314908504486,
+    (52.947411 secs) ensemble-learner 3, best_rmse=0.29726743698120117,
+    (53.778268 secs) ensemble-learner 4, best_rmse=0.2676038444042206,
+    (52.858019 secs) ensemble-learner 5, best_rmse=0.2854132056236267,
+ - avg best_rmse=0.27667 ...
+Current annealed costs = [0.13887526 0.86112474]
+ - predvar_annealed_exp selects [953] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=62
+      * fid=129, ntr=11
+    current pool examples: 917
+    current test examples: 200
+***** Active Step 54 *****
+    (53.340325 secs) ensemble-learner 1, best_rmse=0.2843691110610962,
+    (53.285336 secs) ensemble-learner 2, best_rmse=0.2710808217525482,
+    (53.065780 secs) ensemble-learner 3, best_rmse=0.2867494821548462,
+    (52.712894 secs) ensemble-learner 4, best_rmse=0.2906314730644226,
+    (53.085439 secs) ensemble-learner 5, best_rmse=0.2714167535305023,
+ - avg best_rmse=0.28085 ...
+Current annealed costs = [0.1369631 0.8630369]
+ - predvar_annealed_exp selects [588] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=63
+      * fid=129, ntr=11
+    current pool examples: 916
+    current test examples: 200
+***** Active Step 55 *****
+    (54.579316 secs) ensemble-learner 1, best_rmse=0.3179795444011688,
+    (51.765130 secs) ensemble-learner 2, best_rmse=0.2879592180252075,
+    (51.521831 secs) ensemble-learner 3, best_rmse=0.2775276005268097,
+    (50.583391 secs) ensemble-learner 4, best_rmse=0.29040369391441345,
+    (51.519369 secs) ensemble-learner 5, best_rmse=0.2992146611213684,
+ - avg best_rmse=0.29462 ...
+Current annealed costs = [0.13510429 0.86489571]
+ - predvar_annealed_exp selects [559] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=64
+      * fid=129, ntr=11
+    current pool examples: 915
+    current test examples: 200
+***** Active Step 56 *****
+    (52.990727 secs) ensemble-learner 1, best_rmse=0.30121955275535583,
+    (52.762195 secs) ensemble-learner 2, best_rmse=0.26464295387268066,
+    (52.464752 secs) ensemble-learner 3, best_rmse=0.2712477445602417,
+    (52.155920 secs) ensemble-learner 4, best_rmse=0.2787761688232422,
+    (54.533410 secs) ensemble-learner 5, best_rmse=0.31588491797447205,
+ - avg best_rmse=0.28635 ...
+Current annealed costs = [0.13329664 0.86670336]
+ - predvar_annealed_exp selects [715] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=65
+      * fid=129, ntr=11
+    current pool examples: 914
+    current test examples: 200
+***** Active Step 57 *****
+    (52.280877 secs) ensemble-learner 1, best_rmse=0.28874194622039795,
+    (52.057585 secs) ensemble-learner 2, best_rmse=0.2538129389286041,
+    (51.513055 secs) ensemble-learner 3, best_rmse=0.2717450261116028,
+    (51.788898 secs) ensemble-learner 4, best_rmse=0.26675426959991455,
+    (52.606472 secs) ensemble-learner 5, best_rmse=0.2716173231601715,
+ - avg best_rmse=0.27053 ...
+Current annealed costs = [0.1315381 0.8684619]
+ - predvar_annealed_exp selects [344] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=66
+      * fid=129, ntr=11
+    current pool examples: 913
+    current test examples: 200
+***** Active Step 58 *****
+    (52.164354 secs) ensemble-learner 1, best_rmse=0.26763269305229187,
+    (51.793382 secs) ensemble-learner 2, best_rmse=0.26181820034980774,
+    (52.147588 secs) ensemble-learner 3, best_rmse=0.33118027448654175,
+    (52.834628 secs) ensemble-learner 4, best_rmse=0.2949836850166321,
+    (52.033414 secs) ensemble-learner 5, best_rmse=0.26609674096107483,
+ - avg best_rmse=0.28434 ...
+Current annealed costs = [0.12982671 0.87017329]
+ - predvar_annealed_exp selects [82] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=67
+      * fid=129, ntr=11
+    current pool examples: 912
+    current test examples: 200
+***** Active Step 59 *****
+    (52.069350 secs) ensemble-learner 1, best_rmse=0.30949947237968445,
+    (52.182816 secs) ensemble-learner 2, best_rmse=0.2597135305404663,
+    (52.035862 secs) ensemble-learner 3, best_rmse=0.26007428765296936,
+    (51.800992 secs) ensemble-learner 4, best_rmse=0.24906912446022034,
+    (52.594474 secs) ensemble-learner 5, best_rmse=0.2647464871406555,
+ - avg best_rmse=0.26862 ...
+Current annealed costs = [0.12816062 0.87183938]
+ - predvar_annealed_exp selects [919] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=68
+      * fid=129, ntr=11
+    current pool examples: 911
+    current test examples: 200
+***** Active Step 60 *****
+    (52.329282 secs) ensemble-learner 1, best_rmse=0.2576053738594055,
+    (48.669903 secs) ensemble-learner 2, best_rmse=0.294717401266098,
+    (48.992864 secs) ensemble-learner 3, best_rmse=0.2718954384326935,
+    (49.735802 secs) ensemble-learner 4, best_rmse=0.2939014136791229,
+    (47.058899 secs) ensemble-learner 5, best_rmse=0.27863869071006775,
+ - avg best_rmse=0.27935 ...
+Current annealed costs = [0.12653807 0.87346193]
+ - predvar_annealed_exp selects [473] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=69
+      * fid=129, ntr=11
+    current pool examples: 910
+    current test examples: 200
+***** Active Step 61 *****
+    (49.964736 secs) ensemble-learner 1, best_rmse=0.2581046521663666,
+    (49.681589 secs) ensemble-learner 2, best_rmse=0.2830885946750641,
+    (48.582616 secs) ensemble-learner 3, best_rmse=0.2936978340148926,
+    (49.341387 secs) ensemble-learner 4, best_rmse=0.2644968628883362,
+    (50.226307 secs) ensemble-learner 5, best_rmse=0.30789417028427124,
+ - avg best_rmse=0.28146 ...
+Current annealed costs = [0.1249574 0.8750426]
+ - predvar_annealed_exp selects [264] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=70
+      * fid=129, ntr=11
+    current pool examples: 909
+    current test examples: 200
+***** Active Step 62 *****
+    (49.923182 secs) ensemble-learner 1, best_rmse=0.27770349383354187,
+    (50.907986 secs) ensemble-learner 2, best_rmse=0.27022477984428406,
+    (51.372497 secs) ensemble-learner 3, best_rmse=0.28746119141578674,
+    (50.213448 secs) ensemble-learner 4, best_rmse=0.2655757963657379,
+    (50.465698 secs) ensemble-learner 5, best_rmse=0.3038747310638428,
+ - avg best_rmse=0.28097 ...
+Current annealed costs = [0.12341704 0.87658296]
+ - predvar_annealed_exp selects [241] to query at fid [1]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=70
+      * fid=129, ntr=12
+    current pool examples: 908
+    current test examples: 200
+***** Active Step 63 *****
+    (50.291837 secs) ensemble-learner 1, best_rmse=0.2560947835445404,
+    (51.358409 secs) ensemble-learner 2, best_rmse=0.2832975685596466,
+    (50.356406 secs) ensemble-learner 3, best_rmse=0.2166057825088501,
+>>>>>>>>>>> Reload exp configs >>>>>>>>>>> 
+
+Exponential cost scheduler V1 initiated
+
+<<<<<<<<<<< Resume experiments <<<<<<<<<<< 
+
+***** Active Step 63 *****
+    (50.749794 secs) ensemble-learner 1, best_rmse=0.23841021955013275,
+    (47.683812 secs) ensemble-learner 2, best_rmse=0.2659647762775421,
+    (47.705590 secs) ensemble-learner 3, best_rmse=0.2581454813480377,
+    (47.163556 secs) ensemble-learner 4, best_rmse=0.23733216524124146,
+    (47.328923 secs) ensemble-learner 5, best_rmse=0.25501418113708496,
+ - avg best_rmse=0.25097 ...
+Current annealed costs = [0.12191546 0.87808454]
+ - predvar_annealed_exp selects [315] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=71
+      * fid=129, ntr=12
+    current pool examples: 907
+    current test examples: 200
+***** Active Step 64 *****
+    (47.961536 secs) ensemble-learner 1, best_rmse=0.2198568731546402,
+    (47.788412 secs) ensemble-learner 2, best_rmse=0.2553495764732361,
+    (47.893917 secs) ensemble-learner 3, best_rmse=0.2687076926231384,
+    (47.915377 secs) ensemble-learner 4, best_rmse=0.24358144402503967,
+    (47.712805 secs) ensemble-learner 5, best_rmse=0.29402101039886475,
+ - avg best_rmse=0.25630 ...
+Current annealed costs = [0.12045125 0.87954875]
+ - predvar_annealed_exp selects [787] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=72
+      * fid=129, ntr=12
+    current pool examples: 906
+    current test examples: 200
+***** Active Step 65 *****
+    (47.687738 secs) ensemble-learner 1, best_rmse=0.27622106671333313,
+    (47.643391 secs) ensemble-learner 2, best_rmse=0.24761365354061127,
+    (48.121937 secs) ensemble-learner 3, best_rmse=0.260145902633667,
+    (47.799002 secs) ensemble-learner 4, best_rmse=0.27323445677757263,
+    (48.988086 secs) ensemble-learner 5, best_rmse=0.26865291595458984,
+ - avg best_rmse=0.26517 ...
+Current annealed costs = [0.11902305 0.88097695]
+ - predvar_annealed_exp selects [578] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=73
+      * fid=129, ntr=12
+    current pool examples: 905
+    current test examples: 200
+***** Active Step 66 *****
+    (47.799611 secs) ensemble-learner 1, best_rmse=0.24942028522491455,
+    (47.510085 secs) ensemble-learner 2, best_rmse=0.23447400331497192,
+    (47.907283 secs) ensemble-learner 3, best_rmse=0.2699876129627228,
+    (47.549412 secs) ensemble-learner 4, best_rmse=0.27160459756851196,
+    (47.683418 secs) ensemble-learner 5, best_rmse=0.260505735874176,
+ - avg best_rmse=0.25720 ...
+Current annealed costs = [0.11762955 0.88237045]
+ - predvar_annealed_exp selects [952] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=74
+      * fid=129, ntr=12
+    current pool examples: 904
+    current test examples: 200
+***** Active Step 67 *****
+    (47.994065 secs) ensemble-learner 1, best_rmse=0.24428270757198334,
+    (47.719209 secs) ensemble-learner 2, best_rmse=0.23631416261196136,
+    (48.207562 secs) ensemble-learner 3, best_rmse=0.2740222215652466,
+    (47.664780 secs) ensemble-learner 4, best_rmse=0.2371981143951416,
+    (49.446036 secs) ensemble-learner 5, best_rmse=0.266286700963974,
+ - avg best_rmse=0.25162 ...
+Current annealed costs = [0.11626954 0.88373046]
+ - predvar_annealed_exp selects [577] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=75
+      * fid=129, ntr=12
+    current pool examples: 903
+    current test examples: 200
+***** Active Step 68 *****
+    (48.912324 secs) ensemble-learner 1, best_rmse=0.25615808367729187,
+    (47.102844 secs) ensemble-learner 2, best_rmse=0.23925504088401794,
+    (47.519281 secs) ensemble-learner 3, best_rmse=0.23504550755023956,
+    (47.221951 secs) ensemble-learner 4, best_rmse=0.2491525411605835,
+    (47.258605 secs) ensemble-learner 5, best_rmse=0.2559073269367218,
+ - avg best_rmse=0.24710 ...
+Current annealed costs = [0.11494182 0.88505818]
+ - predvar_annealed_exp selects [487] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=76
+      * fid=129, ntr=12
+    current pool examples: 902
+    current test examples: 200
+***** Active Step 69 *****
+    (47.252350 secs) ensemble-learner 1, best_rmse=0.23577120900154114,
+    (49.697032 secs) ensemble-learner 2, best_rmse=0.30920833349227905,
+    (48.599144 secs) ensemble-learner 3, best_rmse=0.25878238677978516,
+    (47.994912 secs) ensemble-learner 4, best_rmse=0.23786945641040802,
+    (48.314821 secs) ensemble-learner 5, best_rmse=0.25701355934143066,
+ - avg best_rmse=0.25973 ...
+Current annealed costs = [0.11364529 0.88635471]
+ - predvar_annealed_exp selects [104] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=77
+      * fid=129, ntr=12
+    current pool examples: 901
+    current test examples: 200
+***** Active Step 70 *****
+    (48.021948 secs) ensemble-learner 1, best_rmse=0.2519833743572235,
+    (47.466067 secs) ensemble-learner 2, best_rmse=0.24548906087875366,
+    (49.177842 secs) ensemble-learner 3, best_rmse=0.2457589954137802,
+    (48.559777 secs) ensemble-learner 4, best_rmse=0.2582334280014038,
+    (48.081517 secs) ensemble-learner 5, best_rmse=0.23713873326778412,
+ - avg best_rmse=0.24772 ...
+Current annealed costs = [0.11237887 0.88762113]
+ - predvar_annealed_exp selects [583] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=78
+      * fid=129, ntr=12
+    current pool examples: 900
+    current test examples: 200
+***** Active Step 71 *****
+    (47.355651 secs) ensemble-learner 1, best_rmse=0.27678602933883667,
+    (47.671755 secs) ensemble-learner 2, best_rmse=0.2591160535812378,
+    (47.130447 secs) ensemble-learner 3, best_rmse=0.2663846015930176,
+    (46.745564 secs) ensemble-learner 4, best_rmse=0.2681499123573303,
+    (46.629963 secs) ensemble-learner 5, best_rmse=0.22265292704105377,
+ - avg best_rmse=0.25862 ...
+Current annealed costs = [0.11114153 0.88885847]
+ - predvar_annealed_exp selects [303] to query at fid [0]...
+ - size checking ...
+    current train examples: 
+      * fid=33, ntr=79
+      * fid=129, ntr=12
+    current pool examples: 899
+    current test examples: 200
+***** Active Step 72 *****
+    (47.570502 secs) ensemble-learner 1, best_rmse=0.2825981378555298,
+    (48.109454 secs) ensemble-learner 2, best_rmse=0.22217847406864166,
+    (47.271338 secs) ensemble-learner 3, best_rmse=0.28490376472473145,
+    (47.427434 secs) ensemble-learner 4, best_rmse=0.3459683060646057,
